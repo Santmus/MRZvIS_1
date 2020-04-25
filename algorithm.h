@@ -27,13 +27,13 @@ private:
 public:
 	void setVectValue();
 	void additional(bool[12], int); 
-	void rightShift(bool[12]); 
-	void showVector(int);
+	void rightShift(bool[12]); //сдвиг вправо 
+	void showVector(int index); //промежуточный результат вектора
 	void push(bool[12]); 
-	void transfer(); //перевод с десятиричной в двоичную систему
-	void showFirst(); //вывести первое число
-	void showSecond(); //вывести второе число
-	void showTable(int);
+	void showNum(); //выводит пары 
+	void showFirst(); //вывести первое число(множитель)
+	void showSecond(); //вывести второе число(множитель)
+	void showTable(int); //вывести один ряд таблицы
 	void setResult();
 	void calculationResult(int numOfpair);  //результат вычислении в двоичной системе(всех пар)
 

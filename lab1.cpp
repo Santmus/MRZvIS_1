@@ -18,14 +18,14 @@ int main() {
 	while (checkPairs != numPairs) { 
 		cout << "\n" << checkPairs + 1 << " пара: " << "\n";
 		while (true) {
-			cout << "Введите первое число: "; cin >> first;
+			cout << "Введите первый множитель: "; cin >> first;
 			if (first >= 0 && first <= 63) break;			//ограничение на использования до 6-и разрядных чисел
-			else cout << "Число \"" << first << "\" не 6-разрядное" << endl;
+			else cout << "Множитель \"" << first << "\" не 6-разрядное" << endl;
 		}
 		while (true) {
-			cout << "Введите второе число: "; cin >> second;
+			cout << "Введите второй множитель: "; cin >> second;
 			if (second >= 0 && second <= 63) break;			//ограничение на использования до 6-и разрядных чисел
-			else cout << "Число "<< second << " не 6-разрядное"<< endl;
+			else cout << "Множитель \""<< second << "\" не 6-разрядное"<< endl;
 		}
 		Algor pair(first, second);
 		vec.push_back(pair);
@@ -39,7 +39,7 @@ int main() {
 		cout << "Результат перевода с десятичной в двоичную систему" << endl;
 		for (int i = 0; i < vec.size(); i++) {
 			cout << "\t\t" << i + 1 << " пара: ";
-			vec[i].transfer();
+			vec[i].showNum();
 			cout << "*****************************************" << endl;
 		}
 

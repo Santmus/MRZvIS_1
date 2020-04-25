@@ -98,15 +98,15 @@ void Algor::setVectValue() {
 }
 
 
-void Algor::showVector(int index) {
+void Algor::showVector(int index) { //выводит промежуточный результат в такте
 	for (int i = 0; i < 12; i++) {
 		cout << vect[index].arr[i];
-		if (i == 3) cout << " ";
+		if (i == 3 || i==7) cout << "-";
 	}
 }
 
 
-void Algor::push(bool ar[12]) {
+void Algor::push(bool ar[12]) { //запихиваем в контейер
 	container cont;
 	for (int i = 0; i < 12; i++) {
 		cont.arr[i] = ar[i];
@@ -115,7 +115,7 @@ void Algor::push(bool ar[12]) {
 }
 
 
-void Algor::rightShift(bool mas[12]) {
+void Algor::rightShift(bool mas[12]) {//сдвиг вправо
 	for (int i = 0; i < 11; i++) {
 		bool temp = mas[i];
 		mas[i] = mas[i + 1];
@@ -123,7 +123,7 @@ void Algor::rightShift(bool mas[12]) {
 	}
 }
 
-void Algor::transfer() { 
+void Algor::showNum() { //выводит первый и второй число(множители)
 	cout << "\n\nПервый множитель: " << firstNum << " = ";
 	showFirst();
 	cout << endl;
@@ -133,22 +133,22 @@ void Algor::transfer() {
 }
 
 
-void Algor::showFirst() { //выводим первое число
+void Algor::showFirst() { //выводим первое число(множитель)
 	for (int i = 0; i < 6; i++) {
 		cout << firstNumber[i];
 	}
 }
 
 
-void Algor::showSecond() { //выводим второе число
+void Algor::showSecond() { //выводим второе число(множитель)
 	for (int i = 0; i < 6; i++) {
 		cout << secondNumber[i];
 	}
 }
 
-void Algor::showTable(int counter) {
+void Algor::showTable(int counter) { //вывести один ряд таблицы
 	switch (counter) {
-	default: cout << "  ??????          |         ??????          |          ??????          |" << endl;
+	default: cout << "  ------------          |         ------------          |          ------------          |" << endl;
 		break;
 	}
 }
