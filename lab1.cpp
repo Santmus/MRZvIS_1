@@ -47,6 +47,7 @@ int main() {
 	vector <Algor> vec;
 	cout << "Количество пар чисел: "; cin >> numPairs;
 	while (checkPairs != numPairs) { 
+	
 		cout << "\n" << checkPairs + 1 << " пара: " << "\n";
 		cout << "Введите первый множитель: "; cin >> first;
 		cout << "Введите второй множитель: "; cin >> second;
