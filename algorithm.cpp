@@ -125,27 +125,24 @@ void Algor::rightShift(bool mas[12]) {//сдвиг вправо
 
 void Algor::showNum() { //выводит первый и второй число(множители)
 	cout << "\n\nПервый множитель: " << firstNum << " = ";
-	showFirst();
-	cout << endl;
-	cout << "Второй множитель: "  << secondNum << " = ";
-	showSecond();
-	cout << endl;
-}
-
-
-void Algor::showFirst() { //выводим первое число(множитель)
 	for (int i = 0; i < 6; i++) {
 		cout << firstNumber[i];
 	}
-}
-
-
-void Algor::showSecond() { //выводим второе число(множитель)
+	cout << endl;
+	cout << "Второй множитель: "  << secondNum << " = ";
 	for (int i = 0; i < 6; i++) {
 		cout << secondNumber[i];
 	}
+	cout << endl;
 }
 
+
+
+/*void Algor::showTable(int counter) { //вывести один ряд таблицы
+	for (int i = 0; i < counter; i++) {
+		cout << " такт " << i+1 << "|       ------------          |         ------------          |          ------------          |" << endl;
+	}
+}*/
 void Algor::showTable(int counter) { //вывести один ряд таблицы
 	switch (counter) {
 	default: cout << "  ------------          |         ------------          |          ------------          |" << endl;
@@ -159,8 +156,8 @@ void Algor::setResult() {
 	}
 }
 
-void Algor::calculationResult(int numOfpair) {  //результат вычислении в двоичной системе(всех пар)
-	cout << numOfpair + 1 << " пара: "  << firstNum << " * " << secondNum << " = "  << result << " = ";
+void Algor::calculationResult(int numPair) {  //результат вычислении в двоичной системе(всех пар)
+	cout << numPair + 1 << " пара: "  << firstNum << " * " << secondNum << " = "  << result << " = ";
 	for (int i = 0; i < 12; i++) {
 		cout << vect[11].arr[i];
 		if (i == 3 || i==7 ) cout << "-";
