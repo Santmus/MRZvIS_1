@@ -32,13 +32,21 @@ void getBinarySystem(vector <Algor> vec) {
 	}
 }
 
+void viewInterface(int numPairs) {
+	if (numPairs <= 3) {
+		cout << "\n\n\n";
+		cout << "----------------------------------------------------------------------------------------------------------------" << endl;
+		cout << " № Такта    |    Частичное  произведение    |             Сдвиг             |          Частичная сумма         |" << endl;
+		cout << "----------------------------------------------------------------------------------------------------------------" << endl;
+	}
+}
+
 int main() {
 	setlocale(LC_ALL, "Rus");
 	int numPairs, first, second, checkPairs = 0;
 	vector <Algor> vec;
 	cout << "Количество пар чисел: "; cin >> numPairs;
 	while (checkPairs != numPairs) { 
-	
 		cout << "\n" << checkPairs + 1 << " пара: " << "\n";
 		cout << "Введите первый множитель: "; cin >> first;
 		cout << "Введите второй множитель: "; cin >> second;
@@ -53,30 +61,16 @@ int main() {
 		cout << "Что вы хотите сделать?\n1-Посмотреть работу по тактам\n2-Посмотреть итоговый результат\n3-Выйти из программы" << endl; choose = _getch();
 		if (choose == '1') {
 			while (true) {
-				system("cls");
-				if (numPairs <= 3) {
-					cout << "\n\n\n";
-					cout << "-----------------------------------------------------------------------------------------" << endl;
-					cout << " № такта  | частичное  произведение |          сдвиг          |     частичная сумма     |" << endl;
-					cout << "-----------------------------------------------------------------------------------------" << endl;
-				}
+				viewInterface(numPairs);
 				if (numPairs == 1) {
-					if (tact == 0) {
-						cout << "  такт 1  |        "; vec[0].showTable(0);
-						cout << "  такт 2  |        "; vec[0].showTable(0);
-						cout << "  такт 3  |        "; vec[0].showTable(0);
-						cout << "  такт 4  |        "; vec[0].showTable(0);
-						cout << "  такт 5  |        "; vec[0].showTable(0);
-						cout << "  такт 6  |        "; vec[0].showTable(0);
-						cout << "-----------------------------------------------------------------------------------------" << endl;
-					}
+					if (tact == 0) vec[0].viewShowTable(6);
 					else if (tact > 0) {
 						cout << "  такт 1  |        "; if (tact - 1 >= 0 && tact == numPairs) {
-							vec[tact - 1].showVector(0); cout << "        |          -----          |          -----          | "; cout << endl;
+							vec[tact - 1].showVector(0); cout << "        |          ------------          |          ------------          | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 2  |        "; if (tact - 2 >= 0 && tact - 1 == numPairs) {
-							vec[tact - 2].showVector(3); cout << "        |        "; vec[tact - 2].showVector(1); cout << "        |          -----          | "; cout << endl;
+							vec[tact - 2].showVector(3); cout << "        |        "; vec[tact - 2].showVector(1); cout << "        |          ------------          | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 3  |        "; if (tact - 3 >= 0 && tact - 2 == numPairs) {
@@ -88,38 +82,26 @@ int main() {
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 5  |        "; if (tact - 5 >= 0 && tact - 4 == numPairs) {
-							cout << "  -----          |        ";  vec[tact - 5].showVector(10); cout << "        |        "; vec[tact - 5].showVector(8); cout << "        | "; cout << endl;
+							cout << "  ------------          |        ";  vec[tact - 5].showVector(10); cout << "        |        "; vec[tact - 5].showVector(8); cout << "        | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 6  |        "; if (tact - 6 >= 0 && tact - 5 == numPairs) {
-							cout << "  -----          |          -----          |        "; vec[tact - 6].showVector(11); cout << "        | "; cout << endl;
+							cout << "  ------------          |          ------------          |        "; vec[tact - 6].showVector(11); cout << "        | "; cout << endl;
 						}
 						else vec[0].showTable(0);
-						cout << "-----------------------------------------------------------------------------------------" << endl;
+						cout << "----------------------------------------------------------------------------------------------------------------" << endl;
 					}
 				}
 
 				if (numPairs == 2) {
-					if (tact == 0) {
-						cout << "  такт 1  |        "; vec[0].showTable(0);
-						cout << "  такт 2  |        "; vec[0].showTable(0);
-						cout << "  такт 3  |        "; vec[0].showTable(0);
-						cout << "  такт 4  |        "; vec[0].showTable(0);
-						cout << "  такт 5  |        "; vec[0].showTable(0);
-						cout << "  такт 6  |        "; vec[0].showTable(0);
-						cout << "  такт 7  |        "; vec[0].showTable(0);
-						cout << "  такт 8  |        "; vec[0].showTable(0);
-						cout << "  такт 9  |        "; vec[0].showTable(0);
-						cout << "  такт 10 |        "; vec[0].showTable(0);
-						cout << "-----------------------------------------------------------------------------------------" << endl;
-					}
+					if (tact == 0) vec[0].viewShowTable(10);
 					else if (tact > 0) {
 						cout << "  такт 1  |        "; if (tact - 1 >= 0 && tact + 1 == numPairs) {
-							vec[tact - 1].showVector(0); cout << "        |          -----          |          -----          | "; cout << endl;
+							vec[tact - 1].showVector(0); cout << "        |          ------------          |          ------------          | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 2  |        "; if (tact - 2 >= 0 && tact == numPairs) {
-							vec[tact - 2].showVector(3); cout << "        |        "; vec[tact - 2].showVector(1); cout << "        |          -----          | "; cout << endl;
+							vec[tact - 2].showVector(3); cout << "        |        "; vec[tact - 2].showVector(1); cout << "        |          ------------          | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 3  |        "; if (tact - 3 >= 0 && tact - 1 == numPairs) {
@@ -147,43 +129,27 @@ int main() {
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 9  |        "; if (tact - 9 >= 0 && tact - 7 == numPairs) {
-							cout << "  -----          |        ";  vec[tact - 8].showVector(10); cout << "        |        "; vec[tact - 8].showVector(8); cout << "        | "; cout << endl;
+							cout << "  ------------          |        ";  vec[tact - 8].showVector(10); cout << "        |        "; vec[tact - 8].showVector(8); cout << "        | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 10 |        "; if (tact - 10 >= 0 && tact - 8 == numPairs) {
-							cout << "  -----          |          -----          |        "; vec[tact - 9].showVector(11); cout << "        | "; cout << endl;
+							cout << "  ------------          |          ------------          |        "; vec[tact - 9].showVector(11); cout << "        | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 
-						cout << "-----------------------------------------------------------------------------------------" << endl;
+						cout << "----------------------------------------------------------------------------------------------------------------" << endl;
 					}
 				}
 
 				if (numPairs == 3) {
-					if (tact == 0) {
-						cout << "  такт 1  |        "; vec[0].showTable(0);
-						cout << "  такт 2  |        "; vec[0].showTable(0);
-						cout << "  такт 3  |        "; vec[0].showTable(0);
-						cout << "  такт 4  |        "; vec[0].showTable(0);
-						cout << "  такт 5  |        "; vec[0].showTable(0);
-						cout << "  такт 6  |        "; vec[0].showTable(0);
-						cout << "  такт 7  |        "; vec[0].showTable(0);
-						cout << "  такт 8  |        "; vec[0].showTable(0);
-						cout << "  такт 9  |        "; vec[0].showTable(0);
-						cout << "  такт 10 |        "; vec[0].showTable(0);
-						cout << "  такт 11 |        "; vec[0].showTable(0);
-						cout << "  такт 12 |        "; vec[0].showTable(0);
-						cout << "  такт 13 |        "; vec[0].showTable(0);
-						cout << "  такт 14 |        "; vec[0].showTable(0);
-						cout << "-----------------------------------------------------------------------------------------" << endl;
-					}
+					if (tact == 0) vec[0].viewShowTable(14);
 					else if (tact > 0) {
 						cout << "  такт 1  |        "; if (tact - 1 >= 0 && tact + 2 == numPairs) {
-							vec[tact - 1].showVector(0); cout << "        |          -----          |          -----          | "; cout << endl;
+							vec[tact - 1].showVector(0); cout << "        |          ------------          |          ------------          | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 2  |        "; if (tact - 2 >= 0 && tact + 1 == numPairs) {
-							vec[tact - 2].showVector(3); cout << "        |        "; vec[tact - 2].showVector(1); cout << "        |          -----          | "; cout << endl;
+							vec[tact - 2].showVector(3); cout << "        |        "; vec[tact - 2].showVector(1); cout << "        |          ------------          | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 3  |        "; if (tact - 3 >= 0 && tact == numPairs) {
@@ -228,15 +194,15 @@ int main() {
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 13 |        "; if (tact - 13 >= 0 && tact - 10 == numPairs) {
-							cout << "  -----          |        ";  vec[tact - 11].showVector(10); cout << "        |        "; vec[tact - 11].showVector(8); cout << "        | "; cout << endl;
+							cout << "  ------------          |        ";  vec[tact - 11].showVector(10); cout << "        |        "; vec[tact - 11].showVector(8); cout << "        | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 						cout << "  такт 14 |        "; if (tact - 14 >= 0 && tact - 11 == numPairs) {
-							cout << "  -----          |          -----          |        "; vec[tact - 12].showVector(11); cout << "        | "; cout << endl;
+							cout << "  ------------          |          ------------          |        "; vec[tact - 12].showVector(11); cout << "        | "; cout << endl;
 						}
 						else vec[0].showTable(0);
 
-						cout << "-----------------------------------------------------------------------------------------" << endl;
+						cout << "----------------------------------------------------------------------------------------------------------------" << endl;
 					}
 				}
 
@@ -245,18 +211,14 @@ int main() {
 					break;
 				}
 				tact++;
-				cout << "\nСледующий такт - 1\nВсе такты - 2\nВыход из программы - 3" << endl;
+				cout << "\nСледующий такт - 1\nВсе такты - 2\n" << endl;
 				while (true) {
 					enter = _getch();
 					if (enter == '1') break;
 					if (enter == '2') {
-						while (tact != numPairs * 4 + 2) {
-							tact++;
-						}
+						tact = (numPairs * 4 + 2);
 						break;
-
 					}
-					if (enter == '3') exit(0);
 				}
 			}
 			review(vec);

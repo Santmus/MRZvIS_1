@@ -31,6 +31,7 @@ public:
 	void showVector(int index); //промежуточный результат вектора
 	void push(bool[12]); 
 	void showNum(); //выводит пары 
+	void viewShowTable(int num); 
 	void showTable(int); //вывести один ряд таблицы
 	void setResult();
 	void calculationResult(int numOfpair);  //результат вычислении в двоичной системе(всех пар)
