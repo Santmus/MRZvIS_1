@@ -92,7 +92,7 @@ void Algor::setVectValue() {
 	rightShift(temp);
 	rightShift(temp);
 	rightShift(temp);
-
+	rightShift(temp);
 	push(temp);					//16
 	additional(temp, 14);		//17
 }
@@ -138,7 +138,7 @@ void Algor::showNum() { //выводит первый и второй число(множители)
 
 void Algor::viewShowTable(int num) { //вывести один ряд таблицы
 	for (int i = 0; i < num; i++) {
-		cout << "  такта   " << i+1 << " |       ------------          |         ------------          |          ------------          |" << endl;
+		cout << "  такт   " << i+1 << " |       ------------          |         ------------          |          ------------          |" << endl;
 	}
 	cout << "----------------------------------------------------------------------------------------------------------------" << endl;
 }
@@ -153,14 +153,14 @@ void Algor::showTable(int counter) { //вывести один ряд таблицы
 
 void Algor::setResult() {
 	for (int i = 11, j = 0; i >= 0; i--, j++) {
-		result += vect[11].arr[i] * pow(2, j);
+		result += vect[17].arr[i] * pow(2, j);
 	}
 }
 
 void Algor::calculationResult(int numPair) {  //результат вычислении в двоичной системе(всех пар)
 	cout << numPair + 1 << " пара: "  << firstNum << " * " << secondNum << " = "  << result << " = ";
 	for (int i = 0; i < 12; i++) {
-		cout << vect[11].arr[i];
+		cout << vect[17].arr[i];
 		if (i == 3 || i==7 ) cout << "-";
 	}
 	cout << endl;
